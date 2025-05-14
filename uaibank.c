@@ -4,6 +4,8 @@
 
 FILE *fptr;
 
+// Função para exibir o menu de opções
+// e solicitar a escolha do usuário
 void mensagem (){
     printf("╔══════════════════════════════════════════╗\n");
     printf("║ Digite 1 para inserir um usuário\n");
@@ -15,9 +17,13 @@ void mensagem (){
     printf("╚══════════════════════════════════════════╝\n\n");
 }
 
+// Variáveis globais
+// para armazenar os usuários
 int numUsuarios = 0;
 int proximoId = 1;
 
+// Estrutura para armazenar os dados do usuário
+// A estrutura contém os campos id, nome, idade e saldo
 struct usuario {
     int id;
     char nome[101];
@@ -28,6 +34,8 @@ struct usuario {
 
 struct usuario *usuarios = NULL;
 
+// Função para inserir um usuário
+// A função aloca memória para o novo usuário
 void inserirUsuario (){
     usuarios = realloc(usuarios, (numUsuarios + 1) * sizeof(struct usuario));
     
@@ -52,6 +60,7 @@ void inserirUsuario (){
     numUsuarios++;
 }
 
+// EM CONSTRUÇÃO
 int main(){
     int n;
     int quantidade;
